@@ -1,38 +1,212 @@
-.App {
+/* General styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.app__title {
   text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #4caf50;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app__create-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app__create-btn:hover {
+  background-color: #45a049;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Monitor Table */
+.monitor-table {
+  margin-bottom: 40px;
+}
+
+.monitor-table__title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #4caf50;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.monitor-table__table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.monitor-table__table th,
+.monitor-table__table td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.monitor-table__table th {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.monitor-table__row:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.monitor-table__row:hover {
+  background-color: #e0e0e0;
+}
+
+/* Metric Table */
+.metric-table {
+  margin-bottom: 40px;
+}
+
+.metric-table__title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #4caf50;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.metric-table__table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.metric-table__table th,
+.metric-table__table td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.metric-table__table th {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.metric-table__row:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.metric-table__row:hover {
+  background-color: #e0e0e0;
+}
+
+/* Popup */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  z-index: 999;
 }
 
-.App-link {
-  color: #61dafb;
+.popup__inner {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 100%;
+  animation: fadeIn 0.3s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.popup__title {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #4caf50;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.popup__form-group {
+  margin-bottom: 15px;
+}
+
+.popup__label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.popup__input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.popup__buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.popup__button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.popup__button--primary {
+  background-color: #4caf50;
+  color: #fff;
+  margin-right: 10px;
+}
+
+.popup__button--primary:hover {
+  background-color: #45a049;
+}
+
+.popup__button--secondary {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.popup__button--secondary:hover {
+  background-color: #e53935;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

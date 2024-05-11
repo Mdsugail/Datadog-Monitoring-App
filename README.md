@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# Note 
+  I have attached the Datadog API key but its not working 
+  You can use any other API Source to get the data
+# Datadog Monitoring App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React application that integrates with the Datadog API to display monitors and metrics, and allows users to create new monitors. It also includes a server component that listens for Datadog webhooks and updates the UI accordingly.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Display a list of Datadog monitors
+- Display a list of Datadog metrics
+- Create new Datadog monitors
+- Receive and handle Datadog webhooks
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clone the repository:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+git clone https://github.com/your-username/datadog-monitoring-app.git
 
-### `npm test`
+2. Create a `.env` file in the root directory and add your Datadog API and application keys:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+DATADOG_API_KEY=your_datadog_api_key
+DATADOG_APP_KEY=your_datadog_app_key
 
-### `npm run build`
+3. Install dependencies:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+npm install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. Start the development server:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+npm start
 
-### `npm run eject`
+This will start the React development server and the Express server for handling webhooks.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+5. Open your browser and navigate to `http://localhost:3000` to view the Datadog Monitoring App.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Usage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+To create a new monitor, click the "Create New Monitor" button and fill out the form.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To receive webhooks from Datadog, you'll need to configure a webhook in your Datadog account and point it to the appropriate URL (e.g., `http://your-server-url/webhook`).
 
-## Learn More
+## Project Structure
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- `src/App.js`: The main React component that renders the application.
+- `src/components/`: Contains reusable React components for displaying monitors, metrics, and the create monitor popup.
+- `src/services/DatadogService.js`: Handles API calls to the Datadog API.
+- `src/server.js`: An Express server that listens for Datadog webhooks and updates the UI accordingly.
+- `src/App.css`: CSS styles for the application.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Dependencies
 
-### Code Splitting
+- React
+- Axios (for making API requests)
+- Express (for the webhook server)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Contributing
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
